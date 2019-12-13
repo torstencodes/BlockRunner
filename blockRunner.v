@@ -8,15 +8,15 @@ module blockRunner(
     output reg [3:0] VGA_R,     // 4-bit VGA red output
     output reg [3:0] VGA_G,     // 4-bit VGA green output
     output reg [3:0] VGA_B,     // 4-bit VGA blue output
-	 output wire a, ba, c, d, e, f, g,
-	 output wire a1, ba1, c1, d1, e1, f1, g1,
-	 output wire a2, ba2, c2, d2, e2, f2, g2,
-	 output wire a3, ba3, c3, d3, e3, f3, g3,
-	 input SW0,
-	 input KEY0,
-	 input KEY1,
-	 input KEY2,
-	 input KEY3
+    output wire a, ba, c, d, e, f, g,
+    output wire a1, ba1, c1, d1, e1, f1, g1,
+    output wire a2, ba2, c2, d2, e2, f2, g2,
+    output wire a3, ba3, c3, d3, e3, f3, g3,
+    input SW0,
+    input KEY0,
+    input KEY1,
+    input KEY2,
+    input KEY3
     );
 
     wire rst = ~RST_BTN;    // reset is active low on Arty & Nexys Video
