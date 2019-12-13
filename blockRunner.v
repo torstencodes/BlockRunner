@@ -672,7 +672,7 @@ always@(posedge CLK)
 			playingDay:
 				begin
 					rstRand <= 1'b1;				
-					if(blocks[0] == 1'b1 && (b1X < 1 || b2X > 679))
+					if(blocks[0] == 1'b1 && (b1X < 1 || b1X > 679))
 						begin
 							b2Width <= ranWidth;
 							b2Height <= ranHeight;
@@ -726,7 +726,7 @@ always@(posedge CLK)
 			playingNight:
 				begin
 					rstRand <= 1'b1;
-					if(blocks[0] == 1'b1 && (b1X < 1 || b2X > 679))
+					if(blocks[0] == 1'b1 && (b1X < 1 || b1X > 679))
 						begin
 							b1Width <= ranWidth;
 							b1Height <= ranHeight;
