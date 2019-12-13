@@ -1,4 +1,6 @@
- module vga640x480(
+// Credit to https://timetoexplore.net/blog/arty-fpga-vga-verilog-01 for VGA drivers 
+
+module vga640x480(
     input wire i_clk,           // base clock
     input wire i_pix_stb,       // pixel clock strobe
     input wire i_rst,           // reset: restarts frame
