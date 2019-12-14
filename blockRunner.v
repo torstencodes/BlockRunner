@@ -47,8 +47,8 @@ module blockRunner(
 
 /***********************************************************************************************************************/
 
-   wire backDrop, sun, moon, cloud, cloud2, cloud3;
-   assign backDrop = ((x > 0) & (y > 300) & (x < 640) & (y < 477)) ? 1 : 0;
+   	wire backDrop, sun, moon, cloud, cloud2, cloud3;
+   	assign backDrop = ((x > 0) & (y > 300) & (x < 640) & (y < 477)) ? 1 : 0;
 	assign sun = ((x > 475) & (y > 50) & (x < 550) & (y < 125)) ? 1 : 0;
 	assign moon = ((x > 475) & (y > 50) & (x < 550) & (y < 125)) ? 1 : 0;
 	assign cloud = ((x > cloud1X) & (x < cloud1Width + cloud1X) & (y > 75) & (y < 125)) ? 1 : 0;
@@ -162,7 +162,7 @@ end
 always@(*)
 begin
 	case(s)
-		menu: begin
+		menu: 	begin
 				if(KEY0 == 1'b0)
 				begin
 					ns = playingDay;
@@ -437,7 +437,7 @@ reg st_count2;
 always@(posedge CLK)
 	begin
 		case(s)
-		menu: begin
+		menu: 		begin
 					dinoX = 75;
 					dinoWidth = 15;
 					dinoHeight = 40;			
@@ -669,8 +669,7 @@ always@(posedge CLK)
 				countDayNight <= 1'd0;
 				rstRand <= 1'b0;
 				end
-			playingDay:
-				begin
+			playingDay:	begin
 					rstRand <= 1'b1;				
 					if(blocks[0] == 1'b1 && (b1X < 1 || b1X > 679))
 						begin
@@ -723,8 +722,7 @@ always@(posedge CLK)
 							countDayNight <= 5'd0;
 						end
 				end
-			playingNight:
-				begin
+			playingNight:	begin
 					rstRand <= 1'b1;
 					if(blocks[0] == 1'b1 && (b1X < 1 || b1X > 679))
 						begin
@@ -947,7 +945,7 @@ always@(posedge clk)
 						yVal <= 9'd270;
 						NS <= blockT4;
 						end
-			blockT4:	begin
+			blockT4: begin
 						height <= 6'd40;
 						width <= 6'd20;
 						yVal <= 9'd260;
